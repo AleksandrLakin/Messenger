@@ -1,0 +1,17 @@
+package com.example.mymessage.data
+
+import retrofit2.http.Body
+import retrofit2.http.POST
+
+interface Api {
+
+    @POST("/login")
+    suspend fun logIn(@Body auth: AuthRemote): AuthResponse
+
+    @POST("/register")
+    suspend fun register(@Body register: RegisterRemote): AuthResponse
+
+    @POST("/search")
+    suspend fun search(@Body request: SearchRequest): SearchResponse
+
+}
